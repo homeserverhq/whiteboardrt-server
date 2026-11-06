@@ -1,4 +1,37 @@
 {
+  "name": "whiteboardrt-server",
+  "version": "1.0.0",
+  "description": "Self-hosted Socket.IO collaboration server for WhiteboardRT",
+  "author": "WhiteboardRT contributors",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/homeserverhq/whiteboardrt-server.git"
+  },
+  "homepage": "https://github.com/homeserverhq/whiteboardrt-server#readme",
+  "bugs": {
+    "url": "https://github.com/homeserverhq/whiteboardrt-server/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "yarn@1.22.22",
+  "main": "dist/index.js",
+  "prettier": "@excalidraw/prettier-config",
+  "scripts": {
+    "build": "tsc",
+    "fix:code": "yarn test:code --fix",
+    "fix:other": "yarn prettier --write",
+    "fix": "yarn fix:other && yarn fix:code",
+    "prettier": "prettier . --ignore-path=.gitignore",
+    "start": "node dist/index.js",
+    "start:dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only src/index.ts",
+    "test:code": "eslint --ext .ts .",
+    "test:other": "yarn prettier --list-different",
+    "brand:check": "node scripts/check-branding.mjs",
+    "test": "yarn test:other && yarn test:code && yarn brand:check"
+  },
   "dependencies": {
     "@excalidraw/eslint-config": "1.0.1",
     "@excalidraw/prettier-config": "1.0.2",
@@ -18,22 +51,5 @@
     "socket.io": "^4.6.1",
     "ts-node-dev": "^1.1.8",
     "typescript": "4.2.3"
-  },
-  "license": "MIT",
-  "main": "dist/index.js",
-  "name": "excalidraw-portal",
-  "prettier": "@excalidraw/prettier-config",
-  "scripts": {
-    "build": "tsc",
-    "fix:code": "yarn test:code --fix",
-    "fix:other": "yarn prettier --write",
-    "fix": "yarn fix:other && yarn fix:code",
-    "prettier": "prettier . --ignore-path=.gitignore",
-    "start": "node dist/index.js",
-    "start:dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only src/index.ts",
-    "test:code": "eslint --ext .ts .",
-    "test:other": "yarn prettier --list-different",
-    "test": "yarn test:other && yarn test:code"
-  },
-  "version": "1.0.0"
+  }
 }

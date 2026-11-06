@@ -1,5 +1,5 @@
 {
-  "name": "excalidraw-collab-dev",
+  "name": "whiteboardrt-server-dev",
   "script": "./dist/index.js",
   "watch": ["src/"],
   "ignore_watch": ["node_modules", "public"],

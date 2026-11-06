@@ -1,5 +1,5 @@
 {
-  "name": "excalidraw-collab",
+  "name": "whiteboardrt-server",
   "script": "./dist/index.js",
   "ignore_watch": ["node_modules", "public"],
   "max_memory_restart": "4G",

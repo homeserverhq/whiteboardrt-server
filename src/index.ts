@@ -29,7 +29,7 @@ const port =
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.send("Excalidraw collaboration server is up :)");
+  res.send("WhiteboardRT Server is up :)");
 });
 
 const server = http.createServer(app);

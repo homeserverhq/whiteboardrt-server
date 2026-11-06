@@ -1,0 +1,12 @@
+services:
+  whiteboardrt-server:
+    build: .
+    image: whiteboardrt-server:latest
+    container_name: whiteboardrt-server
+    ports:
+      - "5000:8080"
+    environment:
+      NODE_ENV: production
+      PORT: 8080
+      CORS_ORIGIN: "*"
+    restart: unless-stopped
